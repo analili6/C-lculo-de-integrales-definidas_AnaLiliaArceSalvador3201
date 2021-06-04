@@ -1,0 +1,27 @@
+% Título:  CALCULO DE INTEGRALES DEFINIDAS BASICAS 
+% Descripción: Script para calcular la distancia total  recorrida 
+% el tipo de funcion es f(x)=sqrt(x)+ x
+% Autor: Ana Lilia Arce Salvador (analili6) al5853542@gmail.com
+% Fecha: 03/06/21
+% Sesión: 6
+%ejercicio : una particula comienza desde el origen , su velocidad esta en millas por hora y esta dada por 
+% v(t)=sqrt (t)+ t
+%ESPECIFICACIONES :Es necesario importar el paquete symbolic con 
+%pkg load symbolic  para su correcto funcionamiento 
+
+clc
+clear
+syms x;
+% funcion tipo sqrt (x)+ x
+fx = input ("Ingrese la función:")
+funcion = inline(char (fx))
+% establecer los limites 
+a = input ("ingresa valor de a")
+b = input ("ingrasa valor de b")
+% operaciones 
+resultado = (2 * (b * sqrt (b)) / 3 + b ^ 2/2) - (2 * (a * sqrt (a)) / 3 + a ^ 2/2)
+% rango 
+x = 1: 0,2: 4;
+f = x;
+trama (f, x)
+barra (f, x, "m")
