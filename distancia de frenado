@@ -1,0 +1,35 @@
+% Título:  CALCULO DE INTEGRALES DEFINIDAS BASICAS 
+% Descripción: Script para calcular la distancia total  recorrida 
+% el tipo de funcion es v(t)= -1.197t^2 + 58.67
+% Autor: Ana Lilia Arce Salvador (analili6) al5853542@gmail.com
+% Fecha: 03/06/21
+% Sesión: 6
+%Descripción: Script para calcular la distancia de frenado que tiene un automovil
+%ejercicio : %un conductor de un vehiculo que viaja a 40 millas/h(58.67 pies/seg) 
+%aplica los frenos suavemente al principio, luego con mas fuerza deteniendose 
+%por completo despues de 7 seg.
+%la velocidad es funcional del tiempo se modela mediante la funcion 
+%V(t)= -1-197t^2 + 58.57
+%Donde V esta en pies /s , t en seg y 0 < t <7.
+%¿Que distancia en metros recorrio el vehiculo mientras el conductor estaba frenando? 
+
+
+%ESPECIFICACIONES :Es necesario importar el paquete symbolic con 
+%pkg load symbolic  para su correcto funcionamiento 
+
+clc
+clear
+syms x;
+% funcion tipo v(t)= -1.197t^2 + 58.67   = 57.473    = v(x)= 57.473 (x^3)/3 
+fx = input ("Ingrese la función:")
+funcion = inline(char (fx))
+% establecer los limites 
+a = input ("ingresa valor de a")
+b = input ("ingrasa valor de b")
+% operaciones 
+resultado = (57.473*(b^3)/3)-(57.473*(a^3)/3)
+% rango 
+x =0: 0,2: 7;
+f = x;
+trama (f, x)
+barra (f, x, "m")
